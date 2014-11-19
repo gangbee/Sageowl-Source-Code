@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "RegisterSummary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model FS.Web.Models.CustomerModel
+@*@Html.Partial("_MainContent")*@
+<form method="post" enctype="multipart/form-data">
+    @*<div class="overlay">
+        <div class="container-overlay">*@
+    <h3>Summary</h3>
+
+
+
+    <div class="row">
+        <div class="form-horizontal">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="col-sm-3">
+                         <div class="thumbnail">
+                        <img src="~/Pictures/@Model.ContactPerson.UserId.ToString()_@Model.ContactPerson.ContactPersonId.ToString()/@Model.ContactPerson.PicturePath" alt="@Model.ContactPerson.FirstName" id="profilePic" class="thumbnail" />
+                        </div>
+                    </div> 
+                    <!---->
+
+                        <div class="col-md-5">
+                         <table>
+                             <tr>
+                                 <td style="width:100px"><b>Name </b></td>
+                                 <td>: @Model.ContactPerson.FullName</td>
+                             </tr>
+                             <tr>
+                                 <td><b>Birthday </b></td>
+                                 <td>: @Model.ContactPerson.DateOfBirth.ToShortDateString()</td>
+                             </tr>
+                             <tr>
+                                 <td><b>Relationship </b></td>
+                                 <td>: @Model.ContactPerson.RelationshipName</td>
+                             </tr>
+                             <tr>
+                                 <td><b>Gender </b></td>
+                                 <td>: @(Model.ContactPerson.Gender == "F" ? "Female" : "Male")</td>
+                             </tr>
+
+                         </table>
+                         
+                       
+                     </div>
+                    <!----->
+                                       
+                </div>
+
+
+                 <div class="form-group">
+                     <div class="col-md-5">
+                         
+                         
+                       
+                     </div>
+                       <div class="col-sm-12">
+                           &nbsp;
+                       </div>
+                 </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        @Html.Partial("_FileList", Model.Documents)
+                    </div>
+                   @* <div class="col-sm-6">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="badge" style="background-color: @(Model.CheckList.Poa > 0 ? "green" : "red")"><span  class="@(Model.CheckList.Poa > 0 ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-remove")" style="font-size: 16px;"></span></span>
+                                <a href="~/UploadCenter/SpecialDocument/1">Durable Power of Attorney</a>
+                            </li>
+                            <li class="list-group-item">
+                               <span class="badge" style="background-color: @(Model.CheckList.Hpoa > 0 ? "green" : "red")"><span  class="@(Model.CheckList.Hpoa > 0 ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-remove")" style="font-size: 16px;"></span></span>
+                                 <a href="~/UploadCenter/SpecialDocument/2">Healthcare Power of Attorney</a> 
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge" style="background-color: @(Model.CheckList.LW > 0 ? "green" : "red")"><span  class="@(Model.CheckList.LW > 0 ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-remove")" style="font-size: 16px;"></span></span>
+                                <a href="~/UploadCenter/SpecialDocument/3">Living Will</a>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge" style="background-color: @(Model.CheckList.Will > 0 ? "green" : "red")"><span  class="@(Model.CheckList.Will > 0 ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-remove")" style="font-size: 16px;"></span></span>
+                                <a href="~/UploadCenter/SpecialDocument/4">Will</a>
+                            </li>                          
+                        </ul>
+                    </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <a class="btn btn-primary btn-sm pull-right" role="button" href="~/Account/ContactPerson">Go To My Account
+            </a>
+
+        </div>
+    </div>
+    <div class="row">
+        &nbsp;
+    </div>
+
+
+    @*     </div>
+    </div>*@
+</form>

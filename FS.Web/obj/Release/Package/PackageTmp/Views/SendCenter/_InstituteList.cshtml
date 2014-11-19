@@ -1,0 +1,50 @@
+﻿@model IEnumerable<FS.Customer.Institute>
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>    
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Zip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.Attention)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+   
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Zip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Attention)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "", new { id=item.InstituteId }) |
+          
+            @Html.ActionLink("Delete", "", new { id=item.InstituteId })*@
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = ViewData["Title"];
+    Layout = "~/Views/Shared/LayoutWizard.cshtml";
+}
+@model FS.Customer.CustomerDocument
+
+@{var step=0;
+  var id = 0;
+  var nid = 0;}
+@Html.Partial("_MainContent")
+ @if(Model.DocumentKey == "POA")
+                        {
+                            step =4;
+                            id = 2;
+                            nid = 1;
+                         
+
+                        }else if(Model.DocumentKey == "HPOA"){
+                             step =5;
+                             id = 3;
+                             nid = 2;
+                        }
+                        else if (Model.DocumentKey == "LWIL")
+                            {
+                             step =6;
+                             id = 4;
+                             nid = 3;
+                        }
+                        else if(Model.DocumentKey == "WIL")
+                         {
+                             step =7;
+                             id = 0;
+                             nid = 4;
+                        }
+
+@Html.Partial("_ProgressStep", new FS.Web.Models.ProgressModel{ProgressStep=step})
+
+<div class="bs-callout bs-callout-warning">
+    <h3>@ViewData["Title"]</h3>
+    <p>Do not mix form groups or grid column classes directly with input groups. Instead, nest the input group inside of the form group or grid-related element.</p>
+</div>
+
+<form method="post" id="frmUpload" enctype="multipart/form-data">
+    <div class="overlay">
+        
+        <div class="container-overlay">
+            @*<a href="~/Home/index" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></a>*@
+              <div class="row">
+                 <div class="col-md-12">
+                    
+                     
+                     
+                     
+                 </div>
+            </div>
+            <div class="row">
+                <div class="form-horizontal">
+                    <div class="form-group" style="text-align:right">
+                        <label class="col-sm-4 control-label"></label>
+                        <div class="col-sm-6" style="padding-right:160px;" >
+                            <input type="file" id="userFile" name="userFile" />
+                            @*@Html.ValidationMessageFor(model => model.FileName, string.Empty, new { @style = "color:red;!important" })*@
+                                                       
+                             <label id="lblFname">
+                            @if (string.IsNullOrWhiteSpace(Model.FileName))
+                            {
+                                @*<span style="color:red">Please Select a File.</span>*@
+                            }
+                             </label> 
+                          @* <a href="#"><img src="~/Images/pdficon_large.png" id="fileUpload" alt="pdf"  /></a> *@
+                           <a href="#" id="fileUpload"  class="btn btn-primary btn-sm " role="button"> Upload File</a>    (Pdf, Word documents, word perfect)
+                            <img id="loading" src="/Images/720.GIF" width="285" height="20" style="display:none;">
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="form-horizontal">
+                    <div class="form-group"  >
+                        <div class="col-sm-6" style="padding-left:150px; width:700px; text-align:center">
+                            @*@if (!string.IsNullOrWhiteSpace(Model.FileName))
+                            {
+                        *@
+                            <div id="links" style="@(string.IsNullOrWhiteSpace(Model.FileName) ? "display:none" : "")">
+                            <label class="col-sm-4 control-label">Your&nbsp;File</label>
+                             <a href="~/Document/@Model.UserId.ToString()_@Model.DocumentKey/@Model.FileName" id="pdfLink" target="_blank">
+                                <img src="~/Images/pdficon_large.png" alt="pdf" /> &nbsp;<div id="filenamediv" class="row"> @Model.FileName </div>
+                             </a>
+                                  <a href="~/UploadCenter/DeleteDocument/@Model.CustomerDocumentId" id="delPdf" ><span class="badge" style="background-color:red"><span  class="glyphicon glyphicon-remove red" style="font-size: 16px;"></span></span>
+                                    </a>
+
+                            </div>
+                            @*}*@
+                            @*else
+                            {
+                               
+                                 <a href="#"  id="pdfLink" target="_blank">
+                                 <img src="~/Images/pdficon_large.png" alt="pdf" />
+                             </a>
+                            }*@
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12" >
+                    @Html.HiddenFor(model => model.DocumentKey, new { @id="docKey"})
+
+                   
+                         @if(id != 0)
+                        {
+                         
+                             <a class="btn btn-primary btn-sm pull-right" role="button" href="~/UploadCenter/SpecialDocument/@id">Next
+                            </a>
+                        }else
+                        {
+                             <a class="btn btn-primary btn-sm pull-right" role="button" href="~/UploadCenter/AdditionalFiles">Next
+                            </a>
+                        }
+                        @if (id == 2)
+                        {
+                            <a class="btn btn-primary btn-sm pull-right" style="margin-left: 5px;"  role="button" href="~/Account/ContactPersonEdit/@id">Back
+                            </a> 
+                        }
+                        else 
+                        {
+                            
+                             <a class="btn btn-primary btn-sm pull-right" style="margin-left: 5px;"  role="button" href="~/UploadCenter/SpecialDocument/@(Convert.ToInt16(ViewContext.RouteData.Values["id"])-1)">Back
+                            </a> 
+                        }
+                      
+                        @if(id != 0)
+                        {
+                         <a class="btn btn-primary btn-sm pull-right" role="button" href="~/UploadCenter/SpecialDocument/@id">Skip
+                            </a>
+                        }else
+                        {
+                             <a class="btn btn-primary btn-sm pull-right" role="button" href="~/UploadCenter/AdditionalFiles">Skip
+                            </a>
+                        }
+                  
+                </div>
+            </div>
+            <div class="row">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+
+</form>
+ 

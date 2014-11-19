@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Additional Files";
+    Layout = "~/Views/Shared/LayoutWizard.cshtml";
+}
+
+@model FS.Customer.CustomerDocument
+<div class="bs-callout bs-callout-warning">
+    <h3>Additional Files</h3>
+    <p>Upload additional files</p>
+</div>
+<div class="overlay">
+    <div class="container-overlay">
+        @Html.Partial("_FileUpload", Model)      
+
+    </div>
+</div>

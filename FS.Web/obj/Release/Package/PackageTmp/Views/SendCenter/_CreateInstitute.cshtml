@@ -1,0 +1,83 @@
+﻿
+@model FS.Customer.Institute
+<form method="post" id="frmInstuteCreate" action="Create" enctype="multipart/form-data">
+    @Html.ValidationSummary(true)
+    <div class="row">
+        <span class="bg-danger">@ViewData["Error"]</span>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "Name" })
+                        @Html.ValidationMessageFor(model => model.Name, string.Empty, new { @style = "color:red;!important" })
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Address, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(model => model.Address, new { @class = "form-control", @placeholder = "Enter address" })
+                        @Html.ValidationMessageFor(model => model.Address, string.Empty, new { @style = "color:red;!important" })
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Zip, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(model => model.Zip, new { @class = "form-control", @placeholder = "Enter zip" })
+                        @Html.ValidationMessageFor(model => model.Zip, string.Empty, new { @style = "color:red;!important" })
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Telephone, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(model => model.Telephone, new { @class = "form-control", @placeholder = "Enter telephone" })
+                        @Html.ValidationMessageFor(model => model.Telephone, string.Empty, new { @style = "color:red;!important" })
+
+                    </div>
+                </div>
+                  <div class="form-group">
+                    @Html.LabelFor(model => model.Attention, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(model => model.Attention, new { @class = "form-control", @placeholder = "Enter telephone" })
+                        @Html.ValidationMessageFor(model => model.Attention, string.Empty, new { @style = "color:red;!important" })
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Enter email" })
+                        @Html.ValidationMessageFor(model => model.Email, string.Empty, new { @style = "color:red;!important" })
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        @Html.HiddenFor(model => model.InstituteId)
+         @Html.HiddenFor(model => model.IsFromSendCenter)
+        
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <input type="submit" class="btn btn-success pull-right" value="Save" />
+
+        </div>
+
+    </div>
+    <div class="row">
+       
+    </div>
+</form>

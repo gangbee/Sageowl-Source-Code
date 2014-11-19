@@ -1,0 +1,113 @@
+﻿@model FS.Customer.SendDocument
+
+@{
+    ViewBag.Title = "SendDocuments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Send Documents</h4>
+
+
+<form method="post" id="frmSendDoc" enctype="multipart/form-data">
+    @Html.ValidationSummary(true)
+
+    <div class="row">
+        <span class="bg-danger">@ViewData["Error"]</span>
+          <span class="bg-succsess">@ViewData["Message"]</span>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Document</label>
+                    <div class="col-sm-4">
+                        @Html.DropDownListFor(model => model.CustomerDocumentId, ViewData["Documents"] as IEnumerable<SelectListItem>, "-- Select --", new { @id = "cmbDocs", @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.CustomerDocumentId, string.Empty, new { @style = "color:red;!important" })
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Institute</label>
+                    <div class="col-sm-4">
+                        @Html.DropDownListFor(model => model.InstiteId, ViewData["Institutes"] as IEnumerable<SelectListItem>, "-- Select --", new { @id = "cmbInstitute", @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.InstiteId, string.Empty, new { @style = "color:red;!important" })
+
+
+                    </div>
+                    @*<div class="col-sm-4">
+                        <button class="btn btn-primary btn-sm" value="Add institute" onclick="fs.RegistrationEvents.OnAddInstituteClick();" type="button">Add institute</button>
+                    </div>*@
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Date Send</label>
+                    <div class="col-sm-3">
+                        @*<input type='text' name="SendDate" value="@Model.SendDate.ToShortDateString()" class="form-control datepicker" data-date-format="MM/dd/yyyy"/>*@
+                        @Html.TextBoxFor(model => model.SendDate, new { @class = "form-control", placeholder = "Enter send date"})
+                        @Html.ValidationMessageFor(model => model.SendDate)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Date Recived</label>
+                    <div class="col-sm-3">
+                        @*<input type='text' name="DateReceived"  value="@Model.DateReceived.ToShortDateString()" class="form-control datepicker" data-date-format="MM/dd/yyyy"/>*@
+                        @Html.TextBoxFor(model => model.DateReceived, new { @class = "form-control", placeholder = "Enter received date" })
+                        @Html.ValidationMessageFor(model => model.DateReceived)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        @Html.HiddenFor(model => model.SendId);
+    </div>
+
+    <div class="row">
+        <div class="col-md-7">
+            <input type="submit" class="btn btn-success pull-right" value="Send" />
+
+        </div>
+
+    </div>
+    <div class="row">
+    </div>
+
+   
+</form>
+ <div class="modal fade" id="instituteModels" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add Institute</h4>
+                </div>
+                <div class="modal-body">                    
+                            @Html.Partial("_CreateInstitute", new FS.Customer.Institute {IsFromSendCenter=true });
+                </div>
+              
+            </div>
+        </div>
+    </div>
+@section scripts
+{
+   <script>
+       $(document).ready(function () {
+           $(document).on('change', '#cmbInstitute', function (e) {
+               //console.log(this.options[e.target.selectedIndex].text);
+               //this.options[e.target.selectedIndex].value 
+               if($("#cmbInstitute").val()=="-1")
+               {
+                   fs.RegistrationEvents.OnAddInstituteClick();
+               }
+           });
+
+           //$("#cmbInstitute").combobox({
+           //    select: function (event, ui) {
+                   
+           //    }
+           //}
+    //);
+       });
+   </script>
+}

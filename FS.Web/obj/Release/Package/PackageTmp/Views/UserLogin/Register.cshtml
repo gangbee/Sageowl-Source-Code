@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/LayoutWizard.cshtml";
+}
+@model FS.Web.Models.CustomerModel
+@Html.Partial("_MainContent")
+
+@Html.Partial("_ProgressStep", new FS.Web.Models.ProgressModel{ProgressStep=2})
+
+ <div class="overlay">
+    <div class="container-overlay">
+        
+        <div class="row">
+        <div class="bs-callout bs-callout-warning">
+            <h3>Care Giver Information</h3>
+            <p>The care giver is the caregiver or any individual who is caring and managing legal, financial, and health related affairs for a sick family member or friend.</p>
+        </div>
+        </div>
+
+        @Html.Partial("_Register", Model.UserLogin)   
+    </div>
+</div>

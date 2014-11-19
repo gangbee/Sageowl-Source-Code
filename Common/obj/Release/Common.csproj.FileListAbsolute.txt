@@ -1,0 +1,8 @@
+D:\Dev\FileSecure\FileStoreSecure\Common\bin\Release\Common.dll
+D:\Dev\FileSecure\FileStoreSecure\Common\bin\Release\Common.pdb
+D:\Dev\FileSecure\FileStoreSecure\Common\obj\Release\Common.dll
+D:\Dev\FileSecure\FileStoreSecure\Common\obj\Release\Common.pdb
+D:\Dev\FileStoreSecure\Common\bin\Release\Common.dll
+D:\Dev\FileStoreSecure\Common\bin\Release\Common.pdb
+D:\Dev\FileStoreSecure\Common\obj\Release\Common.dll
+D:\Dev\FileStoreSecure\Common\obj\Release\Common.pdb

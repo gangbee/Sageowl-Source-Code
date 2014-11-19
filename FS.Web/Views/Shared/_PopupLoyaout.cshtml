@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Secure File</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+    @*@Styles.Render("~/Content/css")*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/filesecure.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+    
+<body>
+    <div class="busyindicator" style="display:none" id="loader"></div>
+
+    <div class="row">
+            <section id="content">
+                @RenderBody()
+            </section>
+
+        </div>
+      @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/js")
+        <script src="~/Scripts/js/utils.js"></script>
+        <script src="~/Scripts/js/ajaxservice.js"></script>
+        <script src="~/Scripts/js/service.js"></script>
+        <script src="~/Scripts/js/main.js"></script>
+        @RenderSection("scripts", required: false)
+   </body>
+
+    </html>

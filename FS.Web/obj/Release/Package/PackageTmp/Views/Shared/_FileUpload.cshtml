@@ -1,0 +1,88 @@
+﻿@model FS.Customer.CustomerDocument
+<form method="post" id="frmAdditonalFiles" enctype="multipart/form-data">  
+    <div class="row">
+        <div class="form-horizontal">
+             <div class="form-group">
+                  <label class="col-sm-4 control-label">&nbsp;</label>
+             <div class="col-sm-6">
+            <span class="bg-danger">@ViewData["Error"]</span>
+            <span class="bg-success">@ViewData["Success"]</span>
+            </div>
+                 </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.DocumentKey, new { @class = "col-sm-4 control-label" })
+                <div class="col-sm-6">
+                    @Html.DropDownListFor(model => model.DocumentKey, ViewData["Documents"] as IEnumerable<SelectListItem>,"-- Select --", new { @id="cmbDocs", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.DocumentKey, string.Empty, new { @style = "color:red;!important" })
+
+                </div>
+
+
+            </div>
+         <div class="form-group">
+                    @Html.LabelFor(model => model.DocumentName, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.DocumentName, new { @id="txtDocName",@class = "form-control", @placeholder = "Enter file name" })
+                        @Html.ValidationMessageFor(model => model.DocumentName, string.Empty, new { @style = "color:red;!important" })
+
+                    </div>
+
+
+                </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Browse for File</label>
+                <div class="col-sm-6">
+                    
+                   <input type="file" id="userFilemain" name="userFilemain" />
+                    <label id="lblFname"></label>
+                      <a href="#"class="btn btn-primary btn-sm" role="button"  id="fileUploadmain"> Upload File</a>
+                    (Pdf, Word documents, word perfect)
+                      <img id="loading" src="/Images/720.GIF" width="285" height="20" style="display:none;">
+                   
+                </div>
+                 
+
+            </div>
+            
+        </div>
+    </div>
+     <div class="row">
+        
+              <div class="col-md-4">&nbsp;</div>
+        <div class="col-md-7">
+
+        @Html.HiddenFor(model => model.CustomerDocumentId)
+        @Html.HiddenFor(model => model.UserId)
+            
+        @*<input type="submit" style="margin-right: 5px;" class="btn btn-success btn-sm" value="Upload File" />*@
+        @if (HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString().ToLower() != "uploadfiles")
+        {
+               <a class="btn btn-primary btn-sm" style="margin-right:5px;" role="button" href="~/Account/RegisterSummary">The Nest
+        </a>
+        }
+      
+            </div> 
+    </div>
+    <div  class="col-md-12">
+    <hr />
+            </div>
+   
+     <div class="row">
+        <div class="col-md-12" id="divFileList">
+            @Html.Partial("_FileList", Model.CustomerDocumentList)
+        </div>
+        </div>
+    @section scripts
+    {
+    <script>
+        $(document).ready(function () {
+            $('.datepicker').datepicker({
+                format: 'mm/dd/yyyy',
+                startDate: new Date(1920,1,1),
+                pickTime: false
+            })
+           
+        });
+    </script>
+        }
+</form>

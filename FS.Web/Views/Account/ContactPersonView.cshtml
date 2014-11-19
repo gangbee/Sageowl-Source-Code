@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Care Receiver Information";
+    Layout = "~/Views/Shared/LayoutWizard.cshtml";
+}
+@model FS.Web.Models.CustomerModel
+@Html.Partial("_MainContent")
+
+
+@Html.Partial("_ProgressStep", new FS.Web.Models.ProgressModel{ProgressStep=3})
+
+ <div class="overlay">
+    <div class="container-overlay">
+        
+        <div class="row">
+        <div class="bs-callout bs-callout-warning">
+            <h3>Care Receiver</h3>
+            <p>The care receiver is the  individual who is being cared for and whose legal, financial, and health related affairs is being managed by the care giver.</p>
+        </div>
+        </div>
+
+        @Html.Partial("_ContactPerson",Model.ContactPerson)   
+    </div>
+</div>
+ @section scripts
+    {
+    <script>
+        $(document).ready(function () {
+            $('.datepicker').datepicker({
+                format: 'mm/dd/yyyy',
+                startDate: new Date(1920,1,1),
+                pickTime: false
+            })
+           
+        });
+    </script>
+        }

@@ -1,0 +1,67 @@
+﻿@model FS.Web.Models.ProgressModel
+
+<div class="steps">
+  	<ul>
+    	<li class="step step-1">
+      	<a href="#" class="@(Model.ProgressStep == 1? "selected" : "")"><strong class="hidden-xs">Step 1</strong><br />Your Account</a>
+      </li>
+      <li class="step step-2">
+          @if(Request.IsAuthenticated){
+      	        <a class="@(Model.ProgressStep == 2? "selected" : "")" href="~/UserLogin/EditUser"><strong class="hidden-xs">Step 2</strong><br />Care Giver</a>
+          }else{
+               <a class="@(Model.ProgressStep == 2? "selected" : "")" href="#"><strong class="hidden-xs">Step 2</strong><br />Care Giver</a>
+          }
+      </li>
+      <li class="step step-3">
+           @if(Request.IsAuthenticated){
+      	<a href="~/Account/ContactPersonEdit/2" class="@(Model.ProgressStep == 3? "selected" : "")"><strong class="hidden-xs">Step 3</strong><br />Care Receiver</a>
+                }else{
+               <a class="@(Model.ProgressStep == 3? "selected" : "")" href="#"><strong class="hidden-xs">Step 3</strong><br />Care Receiver</a>
+          }
+      </li>
+      <li class="step step-4">
+           @if(Request.IsAuthenticated){
+      	<a href="~/UploadCenter/SpecialDocument/1" class="@(Model.ProgressStep == 4? "selected" : "")"><strong class="hidden-xs">Step 4</strong><br />Durable Power of Attorney</a>
+                }else{
+               <a class="@(Model.ProgressStep == 4? "selected" : "")" href="#"><strong class="hidden-xs">Step 4</strong><br />Durable Power of Attorney</a>
+          }
+      </li>
+      <li class="step step-5">
+           @if(Request.IsAuthenticated){
+      	<a href="~/UploadCenter/SpecialDocument/2" class="@(Model.ProgressStep == 5? "selected" : "")"><strong class="hidden-xs">Step 5</strong><br />Healthcare POA</a>
+                }else{
+               <a class="@(Model.ProgressStep == 5? "selected" : "")" href="#"><strong class="hidden-xs">Step 5</strong><br />Healthcare POA</a>
+          }
+      </li>
+      <li class="step step-6">
+           @if(Request.IsAuthenticated){
+      	<a class="@(Model.ProgressStep == 6? "selected" : "")" href="~/UploadCenter/SpecialDocument/3" ><strong class="hidden-xs">Step 6</strong><br />Living Will</a>
+                }else{
+               <a class="@(Model.ProgressStep == 6? "selected" : "")" href="#"><strong class="hidden-xs">Step 6</strong><br />Living Will</a>
+          }
+      </li>
+      <li class="step step-7">
+           @if(Request.IsAuthenticated){
+      	<a class="@(Model.ProgressStep == 7? "selected" : "")" href="~/UploadCenter/SpecialDocument/4" ><strong class="hidden-xs">Step 7</strong><br />Will</a>
+                }else{
+               <a class="@(Model.ProgressStep == 7? "selected" : "")" href="#"><strong class="hidden-xs">Step 7</strong><br />Will</a>
+          }
+      </li>
+    </ul>
+</div>
+
+
+@*<div class="wizard-steps" >
+
+
+
+  <div class="@(Model.ProgressStep == 1? "active-step" : "completed-step")"><a href="#"><span>1</span>Your Accoun</a></div>
+   
+  <div class="@(Model.ProgressStep == 2? "active-step" : Model.ProgressStep >2 ? "completed-step" : "")"><a href="#"><span>2</span> Register</a></div>
+  <div class="@(Model.ProgressStep == 3? "active-step" : Model.ProgressStep >3 ? "completed-step" : "")"><a href="#"><span>3</span> Care receiver</a></div>
+  <div class="@(Model.ProgressStep == 4? "active-step" : Model.ProgressStep >4 ? "completed-step" : "")"><a href="#"><span>4</span> Power of Attorney</a></div>
+  <div class="@(Model.ProgressStep == 5? "active-step" : Model.ProgressStep >5 ? "completed-step" : "")"><a href="#"><span>5</span> Healthcare POA</a></div>
+   <div class="@(Model.ProgressStep == 6? "active-step" : "")"><a href="#"><span>6</span> Will</a></div>
+</div>*@
+
+

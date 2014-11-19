@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Sage Owls - a helping hand for helping hands</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+    @*@Styles.Render("~/Content/css")*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/styles.css" rel="stylesheet" />
+    <link href="~/Content/gsdk-base.css" rel="stylesheet" />  
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="~/Images/logo-01.png" class="img-thumbnail" style="width: 140px; height: 110px; z-index: 99999" /></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                     <li><a href="~/Account/RegisterSummary"><i class="glyphicon glyphicon-book"></i>Summary</a></li>
+                    <li><a href="~/Account/CheckList"><i class="glyphicon glyphicon-th-list"></i>Check list</a></li>
+                    <li><a href="~/Account/ContactPerson"><i class="glyphicon glyphicon-flash"></i>Care Receiver</a></li>
+                @*    <li><a href="~/UploadCenter/"><i class="glyphicon glyphicon-link"></i>Select Files</a></li>*@
+                    <li><a href="~/UploadCenter/UploadFiles"><i class="glyphicon glyphicon-link"></i>Upload Center</a></li>
+                    <li>
+                        <a href="~/SendCenter/SendDocuments"><i class="glyphicon glyphicon-list-alt"></i>Send Centers</a>
+
+                    </li>
+                   @* <li>
+                        <a href="~/SendCenter/Create"><i class="glyphicon glyphicon-list-alt"></i>Add Send Centers</a>
+                    </li>*@
+                    <li><a href="~/UploadCenter/Organizer"><i class="glyphicon glyphicon-book"></i>Organizer</a></li>
+                    <li><a href="~/UploadCenter/AfterDeath"><i class="glyphicon glyphicon-briefcase"></i>After Death</a></li>
+                    <li><a href="~/UploadCenter/Links"><i class="glyphicon glyphicon-time"></i>Links &amp; Reference</a></li>
+                    <li><a href="~/UploadCenter/Pricing"><i class="glyphicon glyphicon-usd"></i>Pricing</a></li>
+                    <li><a href="~/UploadCenter/HealpContact"><i class="glyphicon glyphicon-question-sign"></i>Help Center Contact</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right navbar-user">
+                    <li><a href="~/Home/Index"><i class="fa fa-envelope"></i>Home</a> </li>
+                    <li class="dropdown messages-dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i>Welcome <span style="color:#00ffff; font-weight:bold;">@User.Identity.Name !</span></a>
+                    </li>                    
+                    <li><a href="~/Account/LogOff"><i class="fa fa-envelope"></i>Logout</a> </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+        <div id="page-wrapper">
+
+            @RenderBody()
+        </div>
+
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/js")
+    <script src="~/Scripts/jquery.ui.widget.js"></script>
+    <script src="~/Scripts/ajaxfileupload.js"></script>
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+    <script src="~/Scripts/js/utils.js"></script>
+    <script src="~/Scripts/js/main.js"></script>
+    
+    @RenderSection("scripts", required: false)
+</body>
+</html>

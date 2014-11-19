@@ -1,0 +1,13 @@
+D:\Dev\FileSecure\FileStoreSecure\Common\bin\Debug\Common.dll
+D:\Dev\FileSecure\FileStoreSecure\Common\bin\Debug\Common.pdb
+D:\Dev\FileSecure\FileStoreSecure\Common\obj\Debug\Common.dll
+D:\Dev\FileSecure\FileStoreSecure\Common\obj\Debug\Common.pdb
+D:\Dev\FileStoreSecure\Common\bin\Debug\Common.dll
+D:\Dev\FileStoreSecure\Common\bin\Debug\Common.pdb
+D:\Dev\FileStoreSecure\Common\obj\Debug\Common.dll
+D:\Dev\FileStoreSecure\Common\obj\Debug\Common.pdb
+D:\Nish\Greg\LiveSite\FileStoreSecure\Common\bin\Debug\Common.dll
+D:\Nish\Greg\LiveSite\FileStoreSecure\Common\bin\Debug\Common.pdb
+D:\Nish\Greg\LiveSite\FileStoreSecure\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+D:\Nish\Greg\LiveSite\FileStoreSecure\Common\obj\Debug\Common.dll
+D:\Nish\Greg\LiveSite\FileStoreSecure\Common\obj\Debug\Common.pdb

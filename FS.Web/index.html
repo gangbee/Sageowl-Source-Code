@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--<link href="Content/bootstrap.css" rel="stylesheet" />-->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/style1.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        $(window).load(function () {
+            $("#cssmenu").menumaker({
+                title: "Menu",
+                format: "dropdown"
+            });
+
+
+            $('#cssmenu').prepend("<div id='menu-indicator'></div>");
+
+            var foundActive = false, activeElement, indicatorPosition, indicator = $('#cssmenu #menu-indicator'), defaultPosition;
+
+            $("#cssmenu > ul > li").each(function () {
+                if ($(this).hasClass('active')) {
+                    activeElement = $(this);
+                    foundActive = true;
+                }
+            });
+
+            if (foundActive === false) {
+                activeElement = $("#cssmenu > ul > li").first();
+            }
+
+            defaultPosition = indicatorPosition = activeElement.position().left + activeElement.width() / 2 - 5;
+            console.log(activeElement);
+            console.log(activeElement.position().left);
+            console.log(activeElement.width());
+            indicator.css("left", indicatorPosition);
+
+            $("#cssmenu > ul > li").hover(function () {
+                activeElement = $(this);
+                indicatorPosition = activeElement.position().left + activeElement.width() / 2 - 5;
+                indicator.css("left", indicatorPosition);
+            },
+            function () {
+                indicator.css("left", defaultPosition);
+            });
+
+        });
+</script>
+</head>
+<body>
+    <ul class="no-style cb-slideshow">
+            <li><span>Image 01</span></li>
+            <li><span>Image 02</span></li>
+            <li><span>Image 03</span></li>
+            <li><span>Image 04</span></li>
+            <li><span>Image 05</span></li>
+            <li><span>Image 06</span></li>
+        </ul>
+        
+        <div class="logo">
+            <img src="images/index-logo.png" class="img-responsive" />
+        </div>
+
+        <div id="cssmenu" style="position:absolute; ">
+            <ul  style="margin-bottom:0px">
+                   <li>
+                        <a href="~/Home/Index">Home</a>
+                    </li>
+                    <li>
+                        <a href="~/Home/About">What Owls Do</a>
+                    </li>
+                     <li>
+                        <a href="~/Home/Contact">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="~/Account/LoginView">Login</a>
+                    </li>
+                </ul>
+        </div>
+
+        <div class="container" style="position:relative; padding-top:250px;  ">
+
+            <div class="row">
+            
+         	    <div class="col-md-12" style="background-color:rgba(0, 0, 0, 0.55); z-index:999999; padding:20px; color:#fff; border-radius:10px;">
+                     <h3>Mission Statement
+To provide a resourceful and easy web-based tool to assist care managers in accessing and managing their care receivers financial, legal, and healthcare affairs.
+</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center" style="margin-top:50px; ">
+                    <a class="btn btn-success btn-lg" style="font-size: 54px; padding: 10px 60px;" href="http://localhost:41492/Home/Info">ENTER</a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+</body>
+</html>

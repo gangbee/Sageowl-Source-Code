@@ -1,0 +1,195 @@
+﻿@model FS.Customer.ContactPerson
+
+<form method="post" enctype="multipart/form-data">
+
+    @Html.ValidationSummary(true)
+    <div class="row">
+        <span class="bg-danger">@ViewData["Error"]</span>
+        <span class="bg-success">@ViewData["Success"]</span>
+    </div>
+    <div class="row">
+
+        <!--- Image container -->
+        <div class="col-md-3">
+            <div class="form-group">
+               
+                <div class="col-sm-6" >
+                    <div class="thumbnail" style="border-width: 0">
+                        @if (!string.IsNullOrWhiteSpace(Model.PicturePath))
+                        {
+                            <a href="#">
+                                <img src="~/Pictures/@Model.UserId.ToString()_@Model.ContactPersonId.ToString()/@Model.PicturePath" alt="@Model.FirstName" id="profilePic"  style="border-width:0" class="thumbnail" /></a>
+                        }
+                        else
+                        {
+                                
+                            <a href="#">
+                                <img src="~/Images/plshld.png" alt="" id="profilePic" class="thumbnail" style="border-width: 0" />
+                                @*<div>upload photo</div>*@</a>
+                        }
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @* @Html.LabelFor(model => model.PicturePath, new { @class = "col-sm-4 control-label" })*@
+                <div class="col-sm-6">
+                    <input type="file" id="PicturePath" class="imagefiles" name="PicturePath" />
+
+                </div>
+
+
+            </div>
+        </div>
+        <!--- c4 end--->
+
+
+        <!-- C4 --->
+        <div class="col-sm-5">
+            <div class="form-horizontal" >
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Gender, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-6" style="padding-top: 7px">
+                        @Html.RadioButton("Gender", "M")<span>&nbsp;Male&nbsp;&nbsp;</span>
+                        @Html.RadioButton("Gender", "F")<span>&nbsp;Female</span>
+                        @Html.ValidationMessageFor(model => model.Gender, string.Empty, new { @style = "color:red;!important" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Relationship, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-6">
+                        @Html.DropDownListFor(model => model.Relationship, ViewData["Relatives"] as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Relationship, string.Empty, new { @style = "color:red;!important" })
+                </div>
+
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FirstName, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", @placeholder = "Enter first name" })
+                        @Html.ValidationMessageFor(model => model.FirstName, string.Empty, new { @style = "color:red;!important" })
+
+                    </div>
+
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.LastName, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.LastName, new { @class = "form-control", @placeholder = "Enter last name" })
+                        @Html.ValidationMessageFor(model => model.LastName, string.Empty, new { @style = "color:red;!important" })
+                     </div>
+                  </div>
+
+               <div class="form-group">
+                    @Html.LabelFor(model => model.Address, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.Address, new { @class = "form-control", @placeholder = "Enter address1" })
+                        @Html.ValidationMessageFor(model => model.Address, string.Empty, new { @style = "color:red;!important" })
+                    </div>
+               </div>
+
+               <div class="form-group">
+                    @Html.LabelFor(model => model.Address2, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.Address2, new { @class = "form-control", @placeholder = "Enter address2" })
+                        @Html.ValidationMessageFor(model => model.Address2, string.Empty, new { @style = "color:red;!important" })
+                    </div>
+               </div>
+
+            </div>
+        </div>
+        <!-- end C4-->
+
+        <!-- c4 --->
+        <div class="col-sm-4">
+            <div class="form-horizontal">
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.City, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.City, new { @class = "form-control", @placeholder = "Enter city" })
+                        @Html.ValidationMessageFor(model => model.City, string.Empty, new { @style = "color:red;!important" })
+
+                    </div>
+
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.State, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-6">
+                        @Html.DropDownListFor(model => model.State, ViewData["StateList"] as IEnumerable<SelectListItem>, new { @class = "form-control", })
+                        @Html.ValidationMessageFor(model => model.State, string.Empty, new { @style = "color:red;!important" })
+
+                    </div>
+
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Zip, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.Zip, new { @class = "form-control", @placeholder = "Enter zip" })
+                        @Html.ValidationMessageFor(model => model.Zip, string.Empty, new { @style = "color:red;!important" })
+
+                    </div>
+
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Telephone, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.Telephone, new { @class = "form-control", @placeholder = "Enter telephone" })
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DateOfBirth, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-6">
+                        @*<input type='text' name="DateOfBirth"  value="@Model.DateOfBirth.ToShortDateString()" class="form-control datepicker" data-date-format="MM/dd/yyyy"/>*@
+                        <input type='text' name="DateOfBirth"  value="@Model.DateOfBirth.ToShortDateString()" class="form-control"/>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!--- end C4 --> 
+    </div>
+    <!--  Add Button -->
+    <div class="row">
+        <div class="col-md-12">
+            @Html.HiddenFor(model => model.UserId)
+            @Html.HiddenFor(model => model.ContactPersonId)
+            @Html.HiddenFor(model => model.IsFromWizaed)
+            @*<p>*@
+            @if (Model.IsFromWizaed)
+            {
+                    <input type="submit" style="margin-left: 5px;" class="btn btn-success btn-sm pull-right" value="Next" />
+                <a class="btn btn-primary btn-sm pull-right" role="button" href="~/UserLogin/EditUser">Back</a>                           
+            }
+            else
+            {
+                <a class="btn btn-primary btn-sm pull-right" role="button" href="~/Account/ContactPerson">Add Another</a>              
+                <input type="submit" style="margin-left: 5px;" class="btn btn-success btn-sm pull-right" value="Save" />
+            }
+
+            @*</p>*@
+        </div>
+        @*<div class="col-md-12">
+    <hr />
+            </div>*@
+    </div>
+    <!-- Add button End -->
+
+</form>
+

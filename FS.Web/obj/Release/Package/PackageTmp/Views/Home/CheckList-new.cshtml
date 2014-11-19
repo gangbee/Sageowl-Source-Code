@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "CheckList";
+    Layout = "~/Views/Shared/LayoutWizard.cshtml";
+}
+@model FS.Customer.CheckList
+<div id="printablediv">
+<div class="bs-callout bs-callout-warning" >
+    <h3>Check List</h3>
+    <p>The documents listed here are considered CORE documents, they are essential for the care giver to take care of a sick family member or friend (the care receivers).<br />  A secondary list of important documents to consider is located on the SageOwl dashboard, which you will have access to after initial registration.</p>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <span class="badge" style="background-color: @(Model.Poa>0 ? "green" : "red")"><span  class="@(Model.Poa>0 ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-remove")" style="font-size: 16px;"></span></span>
+                Durable Power of Attorney
+            </li>
+            <li class="list-group-item">
+                <span class="badge" style="background-color: @(Model.Hpoa>0 ? "green" : "red")"><span  class="@(Model.Hpoa>0 ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-remove")" style="font-size: 16px;"></span></span>
+                Healthcare Power of Attorney 
+            </li>           
+            <li class="list-group-item">
+                <span class="badge" style="background-color: @(Model.LW>0 ? "green" : "red")"><span  class="@(Model.LW>0 ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-remove")" style="font-size: 16px;"></span></span>
+                Living Will
+            </li>
+             <li class="list-group-item">
+                <span class="badge" style="background-color: @(Model.Will>0 ? "green" : "red")"><span  class="@(Model.Will>0 ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-remove")" style="font-size: 16px;"></span></span>
+                Will
+            </li>
+          @*  <li class="list-group-item">
+                <span class="badge" style="background-color: green"><span class="@(Model.Hippa>0 ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-remove")" style="font-size: 16px;"></span></span>
+               HIPPA
+            </li>*@
+           @* <li class="list-group-item">
+                <span class="badge" style="background-color: green"><span class="@(Model.DC>0 ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-remove")" style="font-size: 16px;"></span></span>
+               Death Certificate
+            </li>*@
+        </ul>
+    </div>
+</div>    
+</div>
+<div class="row">
+    <div class="col-md-11">
+        @if(!Context.User.Identity.IsAuthenticated)
+    {
+        <a class="btn btn-primary btn-sm pull-right" role="button" href="~/Home/CreateUser">Next
+        </a>
+           
+    }
+         <input type="button" value="Print" class="btn btn-primary btn-sm pull-right" style="margin-right:5px;" onclick="javascript: printDiv('printablediv')" />
+    </div>
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        function printDiv(divID) {
+            
+            var divElements = document.getElementById(divID).innerHTML;
+            var oldPage = document.body.innerHTML;
+            document.body.innerHTML =
+              "<html><head><title></title></head><body>" +
+              divElements + "</body>";
+            window.print();
+            document.body.innerHTML = oldPage;
+
+
+        }
+    </script>
+}

@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Contact Person";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model FS.Web.Models.CustomerModel
+
+<h3 class="text-center"> Care Receiver </h3>
+<hr />
+
+
+@Html.Partial("_ContactPersonList",Model.ContactPersonList)
+
+@Html.Partial("_ContactPerson",Model.ContactPerson)

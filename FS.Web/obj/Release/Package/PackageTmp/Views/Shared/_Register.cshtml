@@ -1,0 +1,154 @@
+﻿@model FS.Customer.UserLogin
+
+<h4 class="text-center" style="padding-top:0;margin-top:0">Care Giver Information</h4>
+<form method="post" id="frmRegister" enctype="multipart/form-data">
+    @Html.ValidationSummary(true)
+    <div class="row">
+        <span class="bg-danger">@ViewData["Error"]</span>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-horizontal">
+
+                <div class="form-group" style="width:375px">
+                    @Html.LabelFor(model => model.FirstName, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", @placeholder = "Enter first name" })
+                        @Html.ValidationMessageFor(model => model.FirstName, string.Empty, new { @style = "color:red;!important" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="width:375px">
+                    @Html.LabelFor(model => model.LastName, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(model => model.LastName, new { @class = "form-control", @placeholder = "Enter last name" })
+                        @Html.ValidationMessageFor(model => model.LastName, string.Empty, new { @style = "color:red;!important" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="width:375px">
+                    @Html.LabelFor(model => model.Address1, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(model => model.Address1, new { @class = "form-control", @placeholder = "Enter address1" })
+                        @Html.ValidationMessageFor(model => model.Address1, string.Empty, new { @style = "color:red;!important" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="width:375px">
+                    @Html.LabelFor(model => model.Address2, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(model => model.Address2, new { @class = "form-control", @placeholder = "Enter address2" })
+                        @Html.ValidationMessageFor(model => model.Address2, string.Empty, new { @style = "color:red;!important" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="width:375px">
+                    @Html.LabelFor(model => model.City, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(model => model.City, new { @class = "form-control", @placeholder = "Enter city" })
+                        @Html.ValidationMessageFor(model => model.City, string.Empty, new { @style = "color:red;!important" })
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-horizontal" style="padding-left:50px;width:400px">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StateId, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-8">
+                        @Html.DropDownListFor(model => model.StateId, ViewData["StateList"] as IEnumerable<SelectListItem>, new { @class = "form-control", })
+                        @Html.ValidationMessageFor(model => model.StateId, string.Empty, new { @style = "color:red;!important" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Zip, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(model => model.Zip, new { @class = "form-control", @placeholder = "Enter zip" })
+                        @Html.ValidationMessageFor(model => model.Zip, string.Empty, new { @style = "color:red;!important" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Enter email" })
+                        @Html.ValidationMessageFor(model => model.Email, string.Empty, new { @style = "color:red;!important" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Telephone, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(model => model.Telephone, new { @class = "form-control", @placeholder = "Enter telephone" })
+                        @Html.ValidationMessageFor(model => model.Telephone, string.Empty, new { @style = "color:red;!important" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Fax, new { @class = "col-sm-4 control-label" })
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(model => model.Fax, new { @class = "form-control", @placeholder = "Enter fax" })
+                        @Html.ValidationMessageFor(model => model.Fax, string.Empty, new { @style = "color:red;!important" })
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+
+           @* <div class="form-horizontal">*@
+
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">&nbsp;</label>
+
+                    @*@Html.LabelFor(model => model.PicturePath, new { @class = "col-sm-4 control-label" })*@
+                    @*<div class="col-sm-4">
+                    </div>*@
+                    <div class="col-sm-8">
+                        <input type="file" id="PicturePath" name="PicturePath" class="imagefiles" />
+                        <div class="thumbnail" style="border-width:0;padding-left:50px">
+                            <a href="#">
+                                <img id="profilePic" src="~/Images/plshld.png" alt="your image" class="thumbnail" style="border-width:0" />
+                                @*<div>upload photo</div>*@
+                            </a>
+                        </div>
+                    </div>
+
+                @*</div>*@
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="row">
+
+
+        @Html.HiddenFor(model => model.UserId)
+        @Html.ValidationMessageFor(model => model.UserId)
+        @Html.HiddenFor(model => model.UserId)
+        @Html.HiddenFor(model => model.Password)
+        <input type="hidden" value="@Model.Password" name="ConfirmPassword" />
+        @Html.HiddenFor(model => model.UserName)
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <input type="submit" class="btn btn-success pull-right" value="Next" />
+
+        </div>
+
+    </div>
+    <div class="row">
+        &nbsp;
+    </div>
+</form>
+
+

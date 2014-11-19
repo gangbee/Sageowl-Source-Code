@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "CreateAccount";
+    Layout = "~/Views/Shared/LayoutWizard.cshtml";
+}
+
+@Html.Partial("_ProgressStep", new FS.Web.Models.ProgressModel{ProgressStep=1})
+
+ <div class="overlay">
+    <div class="container-overlay">
+        
+        <div class="row">
+        <div class="bs-callout bs-callout-warning">
+            <h3>Your Account</h3>
+            <p>To gain access to the SageOwl website it is necessary to establish a secure account by  providing an username and password.</p>
+        </div>
+        </div>
+
+        @Html.Partial("_UserCredential", new FS.Web.Models.UserInfoModel())      
+    </div>
+</div>

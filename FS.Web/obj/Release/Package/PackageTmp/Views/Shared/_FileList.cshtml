@@ -1,0 +1,45 @@
+﻿@model IEnumerable<FS.Customer.CustomerDocument>
+
+<table class="table table-striped">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>    *@
+        <th>
+            Document
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FileName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateUpload)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+       @* <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>*@
+   
+        <td>
+            @Html.DisplayFor(modelItem => item.DocumentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FileName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateUpload)
+        </td>
+        <td>
+            <a href="#" onclick="javacript:window.open('/document/@(String.Format("{0}_{1}/{2}",item.UserId.ToString(), item.DocumentKey,item.FileName))')">View</a>&nbsp;
+            <a href="~/UploadCenter/DeleteDocument/@item.CustomerDocumentId" id="delPdf" ><span  class="glyphicon glyphicon-remove" style="font-size: 16px;"></span></a>
+          @*  @Html.ActionLink("Edit", "", new { id=item.CustomerDocumentId }) |
+            @Html.ActionLink("Details", "",new { id=item.CustomerDocumentId }) |
+            @Html.ActionLink("Delete", "", new { id=item.CustomerDocumentId })*@
+        </td>
+    </tr>
+}
+
+</table>

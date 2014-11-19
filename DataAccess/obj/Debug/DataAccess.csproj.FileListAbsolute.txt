@@ -1,0 +1,60 @@
+c:\users\mihirant\documents\visual studio 2010\Projects\DataAccess\obj\Debug\ResolveAssemblyReference.cache
+c:\users\mihirant\documents\visual studio 2010\Projects\DataAccess\bin\Debug\DataAccess.dll
+c:\users\mihirant\documents\visual studio 2010\Projects\DataAccess\bin\Debug\DataAccess.pdb
+c:\users\mihirant\documents\visual studio 2010\Projects\DataAccess\obj\Debug\DataAccess.dll
+c:\users\mihirant\documents\visual studio 2010\Projects\DataAccess\obj\Debug\DataAccess.pdb
+C:\MyProjects\DataAccess\DataAccess\bin\Debug\DataAccess.dll
+C:\MyProjects\DataAccess\DataAccess\bin\Debug\DataAccess.pdb
+C:\MyProjects\DataAccess\DataAccess\obj\Debug\ResolveAssemblyReference.cache
+C:\MyProjects\DataAccess\DataAccess\obj\Debug\DataAccess.dll
+C:\MyProjects\DataAccess\DataAccess\obj\Debug\DataAccess.pdb
+E:\Chamith\Medical\PatientManagementSystem\DataAccess\bin\Debug\DataAccess.dll
+E:\Chamith\Medical\PatientManagementSystem\DataAccess\bin\Debug\DataAccess.pdb
+E:\Chamith\Medical\PatientManagementSystem\DataAccess\obj\Debug\ResolveAssemblyReference.cache
+E:\Chamith\Medical\PatientManagementSystem\DataAccess\obj\Debug\DataAccess.dll
+E:\Chamith\Medical\PatientManagementSystem\DataAccess\obj\Debug\DataAccess.pdb
+G:\MyProjects\Medical\PatientManagementSystem\DataAccess\bin\Debug\DataAccess.dll
+G:\MyProjects\Medical\PatientManagementSystem\DataAccess\bin\Debug\DataAccess.pdb
+G:\MyProjects\Medical\PatientManagementSystem\DataAccess\obj\Debug\ResolveAssemblyReference.cache
+G:\MyProjects\Medical\PatientManagementSystem\DataAccess\obj\Debug\DataAccess.dll
+G:\MyProjects\Medical\PatientManagementSystem\DataAccess\obj\Debug\DataAccess.pdb
+G:\MyProjects\Medical\30-12-11\PatientManagementSystem\DataAccess\bin\Debug\DataAccess.dll
+G:\MyProjects\Medical\30-12-11\PatientManagementSystem\DataAccess\bin\Debug\DataAccess.pdb
+G:\MyProjects\Medical\30-12-11\PatientManagementSystem\DataAccess\obj\Debug\ResolveAssemblyReference.cache
+G:\MyProjects\Medical\30-12-11\PatientManagementSystem\DataAccess\obj\Debug\DataAccess.dll
+G:\MyProjects\Medical\30-12-11\PatientManagementSystem\DataAccess\obj\Debug\DataAccess.pdb
+D:\MyProjects\Consumer\WISP\DataAccess\bin\Debug\DataAccess.dll
+D:\MyProjects\Consumer\WISP\DataAccess\bin\Debug\DataAccess.pdb
+D:\MyProjects\Consumer\WISP\DataAccess\obj\Debug\ResolveAssemblyReference.cache
+D:\MyProjects\Consumer\WISP\DataAccess\obj\Debug\DataAccess.dll
+D:\MyProjects\Consumer\WISP\DataAccess\obj\Debug\DataAccess.pdb
+E:\Chamith\WISP\DataAccess\bin\Debug\DataAccess.dll
+E:\Chamith\WISP\DataAccess\bin\Debug\DataAccess.pdb
+E:\Chamith\WISP\DataAccess\obj\Debug\ResolveAssemblyReference.cache
+E:\Chamith\WISP\DataAccess\obj\Debug\DataAccess.dll
+E:\Chamith\WISP\DataAccess\obj\Debug\DataAccess.pdb
+D:\MyProjects\WISP\consumer\DataAccess\bin\Debug\DataAccess.dll
+D:\MyProjects\WISP\consumer\DataAccess\bin\Debug\DataAccess.pdb
+D:\MyProjects\WISP\consumer\DataAccess\obj\Debug\ResolveAssemblyReference.cache
+D:\MyProjects\WISP\consumer\DataAccess\obj\Debug\DataAccess.dll
+D:\MyProjects\WISP\consumer\DataAccess\obj\Debug\DataAccess.pdb
+D:\Dev\FileSecure\FileStoreSecure\DataAccess\bin\Debug\DataAccess.dll
+D:\Dev\FileSecure\FileStoreSecure\DataAccess\bin\Debug\DataAccess.pdb
+D:\Dev\FileSecure\FileStoreSecure\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Dev\FileSecure\FileStoreSecure\DataAccess\obj\Debug\DataAccess.dll
+D:\Dev\FileSecure\FileStoreSecure\DataAccess\obj\Debug\DataAccess.pdb
+D:\Dev\FileStoreSecure\DataAccess\bin\Debug\DataAccess.dll
+D:\Dev\FileStoreSecure\DataAccess\bin\Debug\DataAccess.pdb
+D:\Dev\FileStoreSecure\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Dev\FileStoreSecure\DataAccess\obj\Debug\DataAccess.dll
+D:\Dev\FileStoreSecure\DataAccess\obj\Debug\DataAccess.pdb
+D:\Nish\Greg\FileStoreSecure\FileStoreSecure\DataAccess\bin\Debug\DataAccess.dll
+D:\Nish\Greg\FileStoreSecure\FileStoreSecure\DataAccess\bin\Debug\DataAccess.pdb
+D:\Nish\Greg\FileStoreSecure\FileStoreSecure\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Nish\Greg\FileStoreSecure\FileStoreSecure\DataAccess\obj\Debug\DataAccess.dll
+D:\Nish\Greg\FileStoreSecure\FileStoreSecure\DataAccess\obj\Debug\DataAccess.pdb
+D:\Nish\Greg\LiveSite\FileStoreSecure\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Nish\Greg\LiveSite\FileStoreSecure\DataAccess\obj\Debug\DataAccess.dll
+D:\Nish\Greg\LiveSite\FileStoreSecure\DataAccess\obj\Debug\DataAccess.pdb
+D:\Nish\Greg\LiveSite\FileStoreSecure\DataAccess\bin\Debug\DataAccess.dll
+D:\Nish\Greg\LiveSite\FileStoreSecure\DataAccess\bin\Debug\DataAccess.pdb

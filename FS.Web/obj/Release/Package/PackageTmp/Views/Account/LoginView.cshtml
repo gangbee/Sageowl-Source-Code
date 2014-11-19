@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/LayoutWizard.cshtml";
+}
+@model FS.Customer.UserLogin
+
+
+
+
+
+<div class="bs-callout bs-callout-warning">
+
+
+                    <div class="container">
+                            <div class="login_container">
+                                   <div class="login_title">
+                                        <h2>Login</h2>
+                                   </div>
+                                   <div class="login_form">@Html.Partial("Login", Model)</div>
+                            </div>  
+                        <div class="row">&nbsp;</div>
+                <div class="row">
+                    <div class="col-md-6">
+                    @*<a role="button" class="btn btn-primary pull-right" style="margin-left:5px;" >forgot password</a>*@
+                    @*<a role="button" href="~/UserLogin/Register" class="btn btn-primary pull-right" >Click here to register</a>*@
+                        </div>
+                </div>  
+                    </div>
+
+
+
+                
+</div>

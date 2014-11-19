@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Reason";
+    //Layout = "~/Views/Shared/_PopupLoyaout.cshtml";
+}
+
+<h4>Reason</h4>
+
+@model FS.Web.Models.DocumentModel
+
+<form method="post" enctype="multipart/form-data">
+ 
+ 
+    <div class="overlay">
+
+        
+   
+        <div class="row container-overlay">
+            <div class="row">
+                 <div class="col-md-12">
+                     @Html.Partial("_ProgressStep", new FS.Web.Models.ProgressModel{ProgressStep=1})
+                 </div>
+            </div>
+            <div class="col-md-8">
+                <div class="well">
+                <div class="row">
+                    
+                    @foreach (FS.Common.ValuseData d in Model.ReasonList.Where(r => new string[] { "A", "B", "C", "D" }.Contains(r.DataValue)))
+                    {
+                        <div class="col-md-3">
+                            <a class="btn btn-primary btn-sm pull-right" style="height:100px; width:100%; white-space: normal; " role="button"  href="~/home/FileList/@d.ValuseDataId" >
+                                <h4>@d.DataText</h4>
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8">
+                @Html.DropDownList("Reason", Model.ReasonLessList,"Non of above, Select from here", new { @class = "form-control", id="cmbReason" })
+            </div>
+        </div>
+             <div class="row">&nbsp</div>
+        <div class="row">
+            <div class="col-md-8">
+                <input type="submit"   class="btn btn-primary pull-right" value="Next" />
+            </div>
+        </div>
+    </div>
+ @*onclick="fs.RegistrationEvents.onStepTwo('@d.ValuseDataId')"*@
+            </div>
+        
+</form>

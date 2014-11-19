@@ -1,0 +1,65 @@
+﻿@model IEnumerable<FS.Customer.ContactPerson>
+
+
+<table class="table table-striped">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Relationship)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+   
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th> 
+        <th>
+            @Html.DisplayNameFor(model => model.Zip)
+        </th>    
+      
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.RelationshipName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Zip)
+            
+        </td>
+        <td>
+            <a href="~/Account/EditContactPerson/@item.ContactPersonId">Edit</a>|
+             <a href="~/Account/EditContactPerson/@item.ContactPersonId">Delete</a>
+         @*   @Html.ActionLink("Edit", "EditContactPerson","Account", new { id=item.ContactPersonId }) |            
+            @Html.ActionLink("Delete", "Delete", "Account", new { id=item.ContactPersonId })*@
+        </td>
+    </tr>
+}
+
+</table>
+</br></br>

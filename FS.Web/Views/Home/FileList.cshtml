@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "FileList";
+    //Layout = "~/Views/Shared/_PopupLoyaout.cshtml";
+}
+
+@model FS.Web.Models.DocumentModel
+<h2>What planning have you already done?</h2>
+
+<form method="post" id="frmFileList" enctype="multipart/form-data">
+    <div class="overlay">
+
+        <div class="container-overlay">
+            @*<a href="~/Home/index" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></a>*@
+               <div class="row">
+                 <div class="col-md-12">
+                     @Html.Partial("_ProgressStep", new FS.Web.Models.ProgressModel{ProgressStep=2})
+                 </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6" id="chkFiles">
+                    @foreach (var item in Model.DocumentTypes)
+                    {
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="FileName" id="@item.DataValue" value="@item.DataValue">
+                                    @item.DataText
+                                </label>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-info">
+                        <p class="bg-info">If you do not have these documents, see links for resources</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="submit" class="btn btn-primary pull-right" value="Next" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
